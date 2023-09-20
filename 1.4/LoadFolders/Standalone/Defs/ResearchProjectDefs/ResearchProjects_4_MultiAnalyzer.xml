@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!--============================= Gestalt Engine ================================-->
+	<ResearchProjectDef>
+		<defName>RM_GestaltEngine</defName>
+		<label>Gestalt Engine</label>
+		<description>Research the ability to build an ultratech mainframe.</description>
+		<baseCost>5000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<researchViewX>0.00</researchViewX>
+		<researchViewY>2.55</researchViewY>
+	</ResearchProjectDef>
+</Defs>
