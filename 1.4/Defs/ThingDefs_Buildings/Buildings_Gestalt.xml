@@ -51,8 +51,8 @@
 		<designationCategory>Misc</designationCategory>
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
-		<recipes>
-			<li>RM_HackBiocodedThings</li>
+		<recipes MayRequire="hlx.UltratechAlteredCarbon">
+			<li>VFEU_HackBiocodedThings</li>
 		</recipes>
 		<inspectorTabs>
 			<li>ITab_Bills</li>
