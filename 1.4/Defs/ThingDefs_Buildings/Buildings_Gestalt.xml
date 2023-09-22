@@ -115,7 +115,7 @@
 						<totalMechBandwidth>6</totalMechBandwidth>
 						<totalControlGroups>1</totalControlGroups>
 						<unlockedRecipes>
-							<li>RM_HackBiocodedThings</li>
+							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon, OskarPotocki.VFE.Ultratech">VFEU_HackBiocodedThings</li>
 						</unlockedRecipes>
 					</li>
 					<li>
@@ -135,7 +135,7 @@
 						<totalMechBandwidth>12</totalMechBandwidth>
 						<totalControlGroups>2</totalControlGroups>
 						<unlockedRecipes>
-							<li>RM_HackBiocodedThings</li>
+							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon, OskarPotocki.VFE.Ultratech">VFEU_HackBiocodedThings</li>
 						</unlockedRecipes>
 					</li>
 					<li>
@@ -155,7 +155,7 @@
 						<totalMechBandwidth>18</totalMechBandwidth>
 						<totalControlGroups>3</totalControlGroups>
 						<unlockedRecipes>
-							<li>RM_HackBiocodedThings</li>
+							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon, OskarPotocki.VFE.Ultratech">VFEU_HackBiocodedThings</li>
 						</unlockedRecipes>
 					</li>
 					<li>
@@ -173,7 +173,7 @@
 						<totalMechBandwidth>24</totalMechBandwidth>
 						<totalControlGroups>4</totalControlGroups>
 						<unlockedRecipes>
-							<li>RM_HackBiocodedThings</li>
+							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon, OskarPotocki.VFE.Ultratech">VFEU_HackBiocodedThings</li>
 						</unlockedRecipes>
 					</li>
 				</upgrades>
