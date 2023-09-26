@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GE_DefOf.cs" />
+    <Compile Include="HarmonyPatches\Bill_Mech_PawnAllowedToStartAnew_Patch.cs" />
     <Compile Include="Utils.cs" />
-    <Compile Include="HarmonyPatches\CallBossgroupUtility_BossgroupEverCallable_Patch.cs" />
+    <Compile Include="HarmonyPatches\Bill_Mech_Notify_DoBillStarted_Patch.cs" />
     <Compile Include="CompGestaltEngine.cs" />
     <Compile Include="CompUpgradeable.cs" />
     <Compile Include="HarmonyPatches\CameraJumper_TryJumpAndSelect_Patch.cs" />
