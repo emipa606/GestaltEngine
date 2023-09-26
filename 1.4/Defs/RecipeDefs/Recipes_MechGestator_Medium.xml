@@ -11,7 +11,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>75</count>
+				<count>65</count>
 			</li>
 			<li>
 				<filter>
@@ -19,7 +19,7 @@
 						<li>Plasteel</li>
 					</thingDefs>
 				</filter>
-				<count>75</count>
+				<count>65</count>
 			</li>
 			<li>
 				<filter>
@@ -27,12 +27,12 @@
 						<li>ComponentIndustrial</li>
 					</thingDefs>
 				</filter>
-				<count>4</count>
+				<count>5</count>
 			</li>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>SubcoreRegular</li>
+						<li>SubcoreHigh</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
