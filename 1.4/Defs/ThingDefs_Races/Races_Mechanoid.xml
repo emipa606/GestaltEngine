@@ -11,13 +11,6 @@
 			<BandwidthCost>3</BandwidthCost>
 			<ControlTakingTime>25</ControlTakingTime>
 		</statBases>
-		<race>
-			<mechEnabledWorkTypes>
-				<li>Hauling</li>
-				<li>Crafting</li>
-				<li>Smithing</li>
-			</mechEnabledWorkTypes>
-		</race>
 		<tools>
 			<li>
 				<label>left fist</label>
@@ -57,6 +50,11 @@
 			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+			<mechEnabledWorkTypes>
+				<li>Hauling</li>
+				<li>Crafting</li>
+				<li>Smithing</li>
+			</mechEnabledWorkTypes>
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="NonCombatLightMechanoidKind">

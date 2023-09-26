@@ -33,6 +33,7 @@
 		<canOverlapZones>false</canOverlapZones>
 		<fillPercent>1</fillPercent>
 		<rotatable>false</rotatable>
+
 		<statBases>
 			<MaxHitPoints>2500</MaxHitPoints>
 			<WorkToBuild>65000</WorkToBuild>
@@ -48,11 +49,11 @@
 		</costList>
 		<scatterableOnMapGen>false</scatterableOnMapGen>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<designationCategory>Misc</designationCategory>
+		<designationCategory>Biotech</designationCategory>
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
-		<recipes MayRequire="hlx.UltratechAlteredCarbon">
-			<li>VFEU_HackBiocodedThings</li>
+		<recipes>
+			<li MayRequire="hlx.UltratechAlteredCarbon">VFEU_HackBiocodedThings</li>
 		</recipes>
 		<inspectorTabs>
 			<li>ITab_Bills</li>
