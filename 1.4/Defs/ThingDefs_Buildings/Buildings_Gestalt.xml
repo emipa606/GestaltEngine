@@ -33,7 +33,6 @@
 		<canOverlapZones>false</canOverlapZones>
 		<fillPercent>1</fillPercent>
 		<rotatable>false</rotatable>
-
 		<statBases>
 			<MaxHitPoints>2500</MaxHitPoints>
 			<WorkToBuild>65000</WorkToBuild>
@@ -53,7 +52,7 @@
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
 		<recipes>
-			<li MayRequire="hlx.UltratechAlteredCarbon">VFEU_HackBiocodedThings</li>
+			<li MayRequire="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
 		</recipes>
 		<inspectorTabs>
 			<li>ITab_Bills</li>
@@ -116,7 +115,7 @@
 						<totalMechBandwidth>6</totalMechBandwidth>
 						<totalControlGroups>1</totalControlGroups>
 						<unlockedRecipes>
-							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon, OskarPotocki.VFE.Ultratech">VFEU_HackBiocodedThings</li>
+							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
 						</unlockedRecipes>
 					</li>
 					<li>
@@ -136,7 +135,7 @@
 						<totalMechBandwidth>12</totalMechBandwidth>
 						<totalControlGroups>2</totalControlGroups>
 						<unlockedRecipes>
-							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon, OskarPotocki.VFE.Ultratech">VFEU_HackBiocodedThings</li>
+							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
 						</unlockedRecipes>
 					</li>
 					<li>
@@ -156,7 +155,7 @@
 						<totalMechBandwidth>18</totalMechBandwidth>
 						<totalControlGroups>3</totalControlGroups>
 						<unlockedRecipes>
-							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon, OskarPotocki.VFE.Ultratech">VFEU_HackBiocodedThings</li>
+							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
 						</unlockedRecipes>
 					</li>
 					<li>
@@ -174,7 +173,7 @@
 						<totalMechBandwidth>24</totalMechBandwidth>
 						<totalControlGroups>4</totalControlGroups>
 						<unlockedRecipes>
-							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon, OskarPotocki.VFE.Ultratech">VFEU_HackBiocodedThings</li>
+							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
 						</unlockedRecipes>
 					</li>
 				</upgrades>
