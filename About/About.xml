@@ -5,10 +5,10 @@
 	<supportedVersions>
 		<li>1.4</li>
 	</supportedVersions>
-	<url/>
-	<modVersion>1.1-Specter-rev0</modVersion>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3042095701</url>
+	<modVersion>1.1-Specter-rev1</modVersion>
 	<packageId>hlx.GestaltEngine</packageId>
-	<description>A ultratech personae-class supercomputer designed as both a central command and control hub for local mechanoids and act as a relay for remotely interfacing designated users with said mechanoids.\n\nWhile the baseline model is rather simple, it can be upgraded with more features as it has plenty of room for expansion. Immediate options include independent research, unravelling biocoding on apparel and even hacking foreign or hostile mechanoids.</description>
+	<description>“Gestalt Engine” is a standalone and improved version of the one found in “Reinforced Mechanoids 2”. It allows the player to control mechanoids without the need for a mechanitor. On top this version also adds a new mechanoid, the Matriarch, which can gestate new mechanoids.</description>
 	<modDependencies>
 		<li>
 			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
