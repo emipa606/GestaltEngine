@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="GE_DefOf.cs" />
     <Compile Include="HarmonyPatches\Bill_Mech_PawnAllowedToStartAnew_Patch.cs" />
+    <Compile Include="HarmonyPatches\ITab_Bills_FillTab_NoMechanitorWarning_Patch.cs" />
+    <Compile Include="HarmonyPatches\TransferableUIUtility_DoCountAdjustInterfaceInternal_Patch.cs" />
+    <Compile Include="HarmonyPatches\TransferableUIUtility_DrawOverseerIcon_Patch.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="HarmonyPatches\Bill_Mech_Notify_DoBillStarted_Patch.cs" />
     <Compile Include="CompGestaltEngine.cs" />

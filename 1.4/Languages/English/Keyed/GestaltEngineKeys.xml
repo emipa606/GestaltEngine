@@ -22,5 +22,5 @@
 	<RM.NotEnoughBandwidth>Connecting would exceed gestalt's bandwidth!</RM.NotEnoughBandwidth>
 	<RM.HackMechanoid>Hack hostile mechanoid</RM.HackMechanoid>
 	<RM.HackMechanoidDesc>text.todo</RM.HackMechanoidDesc>
-	
+	<RM.CannotAddGestaltControlled>Cannot add: Gestalt controlled.</RM.CannotAddGestaltControlled>
 </LanguageData>
