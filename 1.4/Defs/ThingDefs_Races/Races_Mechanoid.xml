@@ -4,7 +4,7 @@
 	<ThingDef ParentName="LancerMechanoidWalker">
 		<defName>RM_Mech_Matriarch</defName>
 		<label>matriarch</label>
-		<description>text.todo</description>
+		<description>Fast human-sized gastator mechanoids built for maintaining and gastating other mechanoids. Their bodies are light and lack any real armour, as well as any combat abilities.</description>
 		<statBases>
 			<MarketValue>1200</MarketValue>
 			<MoveSpeed>2.9</MoveSpeed>
@@ -17,8 +17,8 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>12.0</power>
-				<cooldownTime>2</cooldownTime>
+				<power>9.0</power>
+				<cooldownTime>2.2</cooldownTime>
 				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
 				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 			</li>
@@ -27,8 +27,8 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>12.0</power>
-				<cooldownTime>2</cooldownTime>
+				<power>9.0</power>
+				<cooldownTime>2.2</cooldownTime>
 				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
 				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 			</li>
@@ -37,16 +37,16 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>8.5</power>
+				<power>6.5</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-				<chanceFactor>0.2</chanceFactor>
+				<chanceFactor>0.15</chanceFactor>
 			</li>
 		</tools>
 		<race>
 			<body>Lancer</body>
-			<baseHealthScale>0.72</baseHealthScale>
+			<baseHealthScale>0.68</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
