@@ -1,6 +1,8 @@
 ﻿using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
@@ -19,6 +21,36 @@ namespace GestaltEngine
         public List<RecipeDef> unlockedRecipes = new List<RecipeDef>();
         public int totalMechBandwidth;
         public int totalControlGroups;
+
+        public string UpgradeDesc()
+        {
+            var sb = new StringBuilder();
+            if (powerConsumption != 0)
+            {
+                sb.AppendLine("PowerConsumption".Translate() + ": " + powerConsumption.ToString("F0") + " W");
+            }
+            if (heatPerSecond != 0)
+            {
+                sb.AppendLine("GE.HeatPerSecond".Translate(heatPerSecond.ToStringDecimalIfSmall()));
+            }
+            if (researchPointsPerSecond != 0)
+            {
+                sb.AppendLine("GE.ResearchPointsPerSecond".Translate(researchPointsPerSecond.ToStringDecimalIfSmall()));
+            }
+            if (totalMechBandwidth != 0)
+            {
+                sb.AppendLine("GE.TotalMechBandwidth".Translate(totalMechBandwidth));
+            }
+            if (totalControlGroups != 0)
+            {
+                sb.AppendLine("GE.TotalControlGroups".Translate(totalControlGroups));
+            }
+            if (unlockedRecipes.NullOrEmpty() is false)
+            {
+                sb.AppendLine("GE.UnlocksRecipes".Translate(string.Join(", ", unlockedRecipes.Select(x => x.label))));
+            }
+            return sb.ToString().TrimEndNewlines();
+        }
     }
     public class CompProperties_Upgradeable : CompProperties
     {
@@ -162,10 +194,21 @@ namespace GestaltEngine
                     downgrade.disabled = true;
                     downgradeInstant.disabled = true;
                 }
-                else if (level == MaxLevel)
+                else
+                {
+                    downgrade.defaultDesc += "\n\n" + Props.upgrades[level - 1].UpgradeDesc();
+                    downgradeInstant.defaultDesc += "\n\n" + Props.upgrades[level - 1].UpgradeDesc();
+                }
+
+                if (level == MaxLevel)
                 {
                     upgrade.disabled = true;
                     upgradeInstant.disabled = true;
+                }
+                else
+                {
+                    upgrade.defaultDesc += "\n\n" + Props.upgrades[level + 1].UpgradeDesc();
+                    upgradeInstant.defaultDesc += "\n\n" + Props.upgrades[level + 1].UpgradeDesc();
                 }
                 yield return upgrade;
                 yield return downgrade;
@@ -210,7 +253,7 @@ namespace GestaltEngine
             base.CompTick();
             if (CurrentUpgrade.powerConsumption != 0)
             {
-                compPower.powerOutputInt = -CurrentUpgrade.powerConsumption;
+                compPower.PowerOutput = -CurrentUpgrade.powerConsumption;
             }
             if (IsActive)
             {
@@ -299,7 +342,7 @@ namespace GestaltEngine
             level += upgradeOffset;
             upgradeOffset = 0;
             downgradeProgressTick = upgradeProgressTick = -1;
-            compPower.powerOutputInt = -CurrentUpgrade.powerConsumption;
+            compPower.PowerOutput = -CurrentUpgrade.powerConsumption;
             cachedGraphic = null;
             if (progressBarEffecter != null)
             {

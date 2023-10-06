@@ -162,6 +162,18 @@
 					</li>
 				</upgrades>
 			</li>
+			<li Class="CompProperties_MeditationFocus">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes>
+					<li>Minimal</li>
+					<li MayRequire="VanillaExpanded.VPsycastsE">VPE_Science</li>
+				</focusTypes>
+				<offsets>
+					<li Class="GestaltEngine.FocusStrengthOffset_PerGestaltLevel">
+						<offset>0.05</offset>
+					</li>
+				</offsets>
+			</li>
 		</comps>
 	</ThingDef>
 </Defs>

@@ -43,11 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\CompPowerTrader_CompInspectStringExtra_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompPowerTrader_SetUpPowerVars_Patch.cs" />
+    <Compile Include="HarmonyPatches\CompProperties_Power_PowerConsumption_Patch.cs" />
+    <Compile Include="FocusStrengthOffset_PerGestaltLevel.cs" />
     <Compile Include="GE_DefOf.cs" />
     <Compile Include="HarmonyPatches\Bill_Mech_PawnAllowedToStartAnew_Patch.cs" />
     <Compile Include="HarmonyPatches\ITab_Bills_FillTab_NoMechanitorWarning_Patch.cs" />
     <Compile Include="HarmonyPatches\TransferableUIUtility_DoCountAdjustInterfaceInternal_Patch.cs" />
     <Compile Include="HarmonyPatches\TransferableUIUtility_DrawOverseerIcon_Patch.cs" />
+    <Compile Include="HarmonyPatches\StatsReportUtility_DrawStatsReport_Patch.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="HarmonyPatches\Bill_Mech_Notify_DoBillStarted_Patch.cs" />
     <Compile Include="CompGestaltEngine.cs" />
