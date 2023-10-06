@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>RM_GestaltEngine</defName>
 		<label>gestalt engine</label>
-		<description>A ultratech personae-class supercomputer designed as both a central command and control hub for local mechanoids and act as a relay for remotely interfacing designated users with said mechanoids.\n\nWhile the baseline model is rather simple, it can be upgraded with more features as it has plenty of room for expansion. Immediate options include independent research, unravelling biocoding on apparel and even hacking foreign or hostile mechanoids.</description>
+		<description>An outlawed persona-class supercomputer designed as both a central command and control hub for local mechanoids.\n\nWhile the baseline model is rather simple, it can be upgraded with more features as it has plenty of room for expansion.</description>
 		<thingClass>Building_WorkTable</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Biotech/GestaltEngine_Base</texPath>
@@ -28,7 +28,6 @@
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
-		<blockLight>true</blockLight>
 		<castEdgeShadows>true</castEdgeShadows>
 		<canOverlapZones>false</canOverlapZones>
 		<fillPercent>1</fillPercent>
@@ -45,15 +44,12 @@
 			<Steel>250</Steel>
 			<Plasteel>350</Plasteel>
 			<ComponentSpacer>15</ComponentSpacer>
+			<AIPersonaCore>1</AIPersonaCore>
 		</costList>
-		<scatterableOnMapGen>false</scatterableOnMapGen>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<designationCategory>Biotech</designationCategory>
 		<hasInteractionCell>True</hasInteractionCell>
 		<interactionCellOffset>(0,0,-3)</interactionCellOffset>
-		<recipes>
-			<li MayRequire="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
-		</recipes>
 		<inspectorTabs>
 			<li>ITab_Bills</li>
 		</inspectorTabs>
