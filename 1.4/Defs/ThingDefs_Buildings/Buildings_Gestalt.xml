@@ -77,7 +77,7 @@
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>300</basePowerConsumption>
+				<basePowerConsumption>500</basePowerConsumption>
 				<shortCircuitInRain>true</shortCircuitInRain>
 			</li>
 			<li Class="CompProperties_Flickable"/>
@@ -93,7 +93,7 @@
 						</overlayGraphic>
 						<upgradeCooldownTicks>180000</upgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks>
-						<powerConsumption>300</powerConsumption>
+						<powerConsumption>1000</powerConsumption>
 					</li>
 					<li>
 						<!-- level 1 -->
@@ -106,13 +106,10 @@
 						<downgradeCooldownTicks>180000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks>
 						<downgradeDurationTicks>60000</downgradeDurationTicks>
-						<powerConsumption>1000</powerConsumption>
+						<powerConsumption>1500</powerConsumption>
 						<researchPointsPerSecond>0.1</researchPointsPerSecond>
 						<totalMechBandwidth>6</totalMechBandwidth>
 						<totalControlGroups>1</totalControlGroups>
-						<unlockedRecipes>
-							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
-						</unlockedRecipes>
 					</li>
 					<li>
 						<!-- level 2 -->
@@ -130,9 +127,6 @@
 						<researchPointsPerSecond>0.15</researchPointsPerSecond>
 						<totalMechBandwidth>12</totalMechBandwidth>
 						<totalControlGroups>2</totalControlGroups>
-						<unlockedRecipes>
-							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
-						</unlockedRecipes>
 					</li>
 					<li>
 						<!-- level 3 -->
@@ -145,14 +139,11 @@
 						<downgradeCooldownTicks>180000</downgradeCooldownTicks>
 						<upgradeDurationTicks>60000</upgradeDurationTicks>
 						<downgradeDurationTicks>60000</downgradeDurationTicks>
-						<powerConsumption>4000</powerConsumption>
+						<powerConsumption>3000</powerConsumption>
 						<heatPerSecond>25</heatPerSecond>
 						<researchPointsPerSecond>0.2</researchPointsPerSecond>
 						<totalMechBandwidth>18</totalMechBandwidth>
 						<totalControlGroups>3</totalControlGroups>
-						<unlockedRecipes>
-							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
-						</unlockedRecipes>
 					</li>
 					<li>
 						<!-- level 4 -->
@@ -163,14 +154,11 @@
 						</overlayGraphic>
 						<downgradeCooldownTicks>180000</downgradeCooldownTicks>
 						<downgradeDurationTicks>60000</downgradeDurationTicks>
-						<powerConsumption>6000</powerConsumption>
+						<powerConsumption>5000</powerConsumption>
 						<heatPerSecond>50</heatPerSecond>
 						<researchPointsPerSecond>0.25</researchPointsPerSecond>
 						<totalMechBandwidth>24</totalMechBandwidth>
 						<totalControlGroups>4</totalControlGroups>
-						<unlockedRecipes>
-							<li MayRequireAnyOf="hlx.UltratechAlteredCarbon">AC_HackBiocodedThings</li>
-						</unlockedRecipes>
 					</li>
 				</upgrades>
 			</li>
