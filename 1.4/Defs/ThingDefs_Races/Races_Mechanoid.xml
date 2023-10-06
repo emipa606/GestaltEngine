@@ -4,7 +4,7 @@
 	<ThingDef ParentName="LancerMechanoidWalker">
 		<defName>RM_Mech_Matriarch</defName>
 		<label>matriarch</label>
-		<description>Fast human-sized gastator mechanoids built for maintaining and gastating other mechanoids. Their bodies are light and lack any real armour, as well as any combat abilities.</description>
+		<description>Fast human-sized gestator mechanoids built for maintaining and gestating different kind of mechanoids. Their bodies are light and lack any real armor, as well as any combat abilities.</description>
 		<statBases>
 			<MarketValue>1200</MarketValue>
 			<MoveSpeed>2.9</MoveSpeed>
