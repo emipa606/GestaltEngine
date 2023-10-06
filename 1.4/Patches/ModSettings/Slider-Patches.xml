@@ -35,8 +35,8 @@
 	</Operation>
 	<!-- ================ Mechanoid Max Control - Level 2 ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationSliderFloat">
-		<label>Tweak Gestalt Level 2 Bandwith</label>
-		<tooltip>Adjust how much bandwith the Gestalt Engine has when level 2. Default: 2</tooltip>
+		<label>Tweak Gestalt Level 2 Control Groups</label>
+		<tooltip>Adjust how many control groups the Gestalt Engine has when level 2. Default: 2</tooltip>
 		<id>RM_GestaltLevel2Control</id>
 		<category>RM_GestaltEngine_Upgrades</category>
 		<order>25</order>
@@ -57,8 +57,8 @@
 	</Operation>
 	<!-- ================ Mechanoid Max Control - Level 3 ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationSliderFloat">
-		<label>Tweak Gestalt Level 3 Bandwith</label>
-		<tooltip>Adjust how much bandwith the Gestalt Engine has when level 3. Default: 3</tooltip>
+		<label>Tweak Gestalt Level 3 Control Groups</label>
+		<tooltip>Adjust how many control groups the Gestalt Engine has when level 3. Default: 3</tooltip>
 		<id>RM_GestaltLevel3Control</id>
 		<category>RM_GestaltEngine_Upgrades</category>
 		<order>35</order>
@@ -79,8 +79,8 @@
 	</Operation>
 	<!-- ================ Mechanoid Max Control - Level 4 ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationSliderFloat">
-		<label>Tweak Gestalt Level 3 Bandwith</label>
-		<tooltip>Adjust how much bandwith the Gestalt Engine has when level 4. Default: 4</tooltip>
+		<label>Tweak Gestalt Level 4 Control Groups</label>
+		<tooltip>Adjust how many control groups the Gestalt Engine has when level 4. Default: 4</tooltip>
 		<id>RM_GestaltLevel4Control</id>
 		<category>RM_GestaltEngine_Upgrades</category>
 		<order>45</order>
