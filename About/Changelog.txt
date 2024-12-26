@@ -1,0 +1,5 @@
+# Changelog for GestaltEngine
+
+1.5.1 - Fixed some missing descriptions, inlined the Royalty patch
+Used DeepL to update translations for ChineseSimplified, French, German
+

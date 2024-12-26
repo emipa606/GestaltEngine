@@ -1,32 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Gestalt Engine</name>
-	<author>Helixien</author>
-	<supportedVersions>
-		<li>1.4</li>
-		<li>1.5</li>
-	</supportedVersions>
-	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=3042095701</url>
-	<modVersion>1.1.1-Specter-rev1</modVersion>
-	<packageId>hlx.GestaltEngine</packageId>
-	<description>“Gestalt Engine” is a standalone and improved version of the one found in “Reinforced Mechanoids 2”. It allows the player to control mechanoids without the need for a mechanitor. On top this version also adds a new mechanoid, the Matriarch, which can gestate new mechanoids.</description>
-	<modDependencies>
-		<li>
-			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
-			<displayName>Vanilla Expanded Framework</displayName>
-			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
-			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
-		</li>
-		<li>
-			<packageId>Ludeon.RimWorld.Biotech</packageId>
-			<displayName>Biotech</displayName>
-			<downloadUrl>https://store.steampowered.com/app/1826140/RimWorld__Biotech/</downloadUrl>
-		</li>
-	</modDependencies>
-	<loadAfter>
-		<li>Ludeon.RimWorld.Biotech</li>
-		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
-		<li>hlx.ReinforcedMechanoids2</li>
-		<li>hlx.UltratechAlteredCarbon</li>
-	</loadAfter>
+  <name>Gestalt Engine (Continued)</name>
+  <packageId>Mlie.GestaltEngine</packageId>
+  <author>Helixien</author>
+  <url>https://github.com/emipa606/GestaltEngine</url>
+  <supportedVersions>
+    <li>1.4</li>
+    <li>1.5</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>Ludeon.Rimworld.Biotech</packageId>
+      <displayName>Rimworld Biotech</displayName>
+      <downloadUrl>https://store.steampowered.com/app/1826140/RimWorld__Biotech/</downloadUrl>
+    </li>
+    <li>
+      <packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+      <displayName>Vanilla Expanded Framework</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+      <downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Ludeon.Rimworld.Biotech</li>
+    <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+  </loadAfter>
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+Update of Helixiens mod https://steamcommunity.com/sharedfiles/filedetails/?id=3042401691
+with permission
+
+[img]https://i.imgur.com/pufA0kM.png[/img]
+
+[table]
+    [tr][td][url=https://dsc.gg/mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td] [td][url=https://github.com/emipa606/GestaltEngine][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [/tr]
+    [tr]
+        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
+        [td][img]https://i.imgur.com/6KqTKks.png[/img][/td]
+    [/tr]
+[/table]
+	
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
+[url=https://ko-fi.com/helixien][img]https://i.imgur.com/bVhysiO.png[/img][/url]
+
+[img]https://i.imgur.com/IKjHkEj.png[/img]
+
+A detailed record of all changes can be found in the “Changelog” tab. Please check there
+
+[b]Current mod version: 1.1.1-Specter-rev1[/b]
+[b]Supports Rimworld version: 1.4[/b]
+
+[img]https://i.imgur.com/NuczGAx.png[/img]
+
+This is heavily WIP. Expect changes, fixes and more down the line!
+
+[img]https://i.imgur.com/90RWWYe.png[/img]
+
+[h1]”I'm Sorry Dave, I'm Afraid I Can't Do That!"[/h1]
+
+[b]“Gestalt Engine”[/b] is a standalone and improved version of the one found in [b]“Reinforced Mechanoids 2”[/b]. It allows the player to control mechanoids without the need for a mechanitor. On top this version also adds a new mechanoid, the Matriarch, which can gestate new mechanoids.
+
+Every aspect of it was made to fit into Rimworld perfectly. From the artstyle, do the way it works. For people who disagree with my balancing, the mod includes extensive mod options to tweak it to your liking!
+
+[img]https://i.imgur.com/uCTaS4j.png[/img]
+
+[img]https://i.imgur.com/belBjL8.png[/img]
+[img]https://i.imgur.com/BHS9Lyj.png[/img]
+
+[img]https://i.imgur.com/ySBnwIC.png[/img]
+
+There are no patches needed as of now.
+
+[img]https://i.imgur.com/P2ODCWn.png[/img]
+
+Some often asked questions, answered already.
+
+[b]Q:[/b] Can I used this and Reinforced Mechanoids 2?
+[b]A:[/b] Yes, you should. Please load this after it.
+
+[b]Q:[/b] Is this mod save game compatible?
+[b]A:[/b] Yeah! You can’t remove it after you add it though!
+
+[b]Q:[/b] Is this mod compatible with Combat Extended? 
+[b]A:[/b] Most likely yes! I think?
+
+[img]https://i.imgur.com/kjEZHTg.png[/img]
+
+The people without this mod could not have been made:
+
+[b]Taranchuk:[/b] Responsible for the code that makes this beauty work.
+
+Rimworld is owned by Tynan Sylvester.
+Based on the books by Richard K. Morgan, check them out, they are great!
+
+[url=https://creativecommons.org/licenses/by-nc-nd/4.0/] CC BY-NC-ND 4.0[/url]
+
+[url=https://steamcommunity.com/workshop/filedetails/?id=2941742522][img]https://i.imgur.com/0txWCGk.png[/img][/url]
+
+[img]https://i.imgur.com/VJt6kpB.jpg[/img]
+
+[img]https://i.imgur.com/PwoNOj4.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
+[/list]</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.1</modVersion>
 </ModMetaData>
