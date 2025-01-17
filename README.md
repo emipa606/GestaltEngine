@@ -1,15 +1,15 @@
-# [Gestalt Engine (Continued)]()
+# [Gestalt Engine (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=3392334612)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
 Update of Helixiens mod https://steamcommunity.com/sharedfiles/filedetails/?id=3042401691
-with permission
+with permission since they had no time to support it
+
+- All features of this mod is now included in [Reinforced Mechanoid 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3400713047)
 
 ![Image](https://i.imgur.com/pufA0kM.png)
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
-
-[![Image](https://i.imgur.com/bVhysiO.png)](https://ko-fi.com/helixien)
 
 ![Image](https://i.imgur.com/IKjHkEj.png)
 
@@ -46,7 +46,8 @@ There are no patches needed as of now.
 Some often asked questions, answered already.
 
 **Q:** Can I used this and Reinforced Mechanoids 2?
-**A:** Yes, you should. Please load this after it.
+~~**A:** Yes, you should. Please load this after it.~~
+**A:** No need to use both, Reinforced Mechanoids 2 now includes all features of this mod.
 
 **Q:** Is this mod save game compatible?
 **A:** Yeah! You can’t remove it after you add it though!
@@ -67,8 +68,6 @@ Based on the books by Richard K. Morgan, check them out, they are great!
 
 [![Image](https://i.imgur.com/0txWCGk.png)](https://steamcommunity.com/workshop/filedetails/?id=2941742522)
 
-![Image](https://i.imgur.com/VJt6kpB.jpg)
-
 ![Image](https://i.imgur.com/PwoNOj4.png)
 
 
@@ -81,4 +80,6 @@ Based on the books by Richard K. Morgan, check them out, they are great!
 -  If you have the solution for a problem, please post it to the GitHub repository.
 -  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
+[![Image](https://img.shields.io/github/v/release/emipa606/GestaltEngine?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3392334612) | tags:  matriarch,  control

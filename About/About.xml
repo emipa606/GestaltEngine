@@ -25,9 +25,15 @@
     <li>Ludeon.Rimworld.Biotech</li>
     <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
   </loadAfter>
+  <incompatibleWith>
+    <li>Mlie.ReinforcedMechanoid2</li>
+    <li>FerretWithACatHat.MechanitorWorkType</li>
+  </incompatibleWith>
   <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of Helixiens mod https://steamcommunity.com/sharedfiles/filedetails/?id=3042401691
-with permission
+with permission since they had no time to support it
+
+- All features of this mod is now included in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3400713047]Reinforced Mechanoid 2[/url]
 
 [img]https://i.imgur.com/pufA0kM.png[/img]
 
@@ -41,8 +47,6 @@ with permission
 [/table]
 	
 [img]https://i.imgur.com/Z4GOv8H.png[/img]
-[url=https://ko-fi.com/helixien][img]https://i.imgur.com/bVhysiO.png[/img][/url]
-
 [img]https://i.imgur.com/IKjHkEj.png[/img]
 
 A detailed record of all changes can be found in the “Changelog” tab. Please check there
@@ -76,7 +80,8 @@ There are no patches needed as of now.
 Some often asked questions, answered already.
 
 [b]Q:[/b] Can I used this and Reinforced Mechanoids 2?
-[b]A:[/b] Yes, you should. Please load this after it.
+[strike][b]A:[/b] Yes, you should. Please load this after it.[/strike]
+[b]A:[/b] No need to use both, Reinforced Mechanoids 2 now includes all features of this mod.
 
 [b]Q:[/b] Is this mod save game compatible?
 [b]A:[/b] Yeah! You can’t remove it after you add it though!
@@ -97,8 +102,6 @@ Based on the books by Richard K. Morgan, check them out, they are great!
 
 [url=https://steamcommunity.com/workshop/filedetails/?id=2941742522][img]https://i.imgur.com/0txWCGk.png[/img][/url]
 
-[img]https://i.imgur.com/VJt6kpB.jpg[/img]
-
 [img]https://i.imgur.com/PwoNOj4.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
@@ -108,6 +111,8 @@ Based on the books by Richard K. Morgan, check them out, they are great!
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
-[/list]</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.1</modVersion>
+[/list] 
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3392334612][img]https://img.shields.io/github/v/release/emipa606/GestaltEngine?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  matriarch,  control</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.2</modVersion>
 </ModMetaData>
