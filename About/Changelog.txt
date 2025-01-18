@@ -1,5 +1,8 @@
 # Changelog for GestaltEngine
 
+1.5.3 - Fixed the techprint patch not showing
+
+
 1.5.2 - Added incompatibility to about-file
 
 
