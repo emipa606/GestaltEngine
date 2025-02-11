@@ -7,15 +7,18 @@ namespace GestaltEngine;
 
 public class Upgrade
 {
+    public readonly int downgradeCooldownTicks = -1;
+    public readonly int downgradeDurationTicks = -1;
+    public readonly List<RecipeDef> unlockedRecipes = [];
+    public bool allowCaravans;
     public float heatPerSecond;
     public GraphicData overlayGraphic;
     public float powerConsumption;
     public float researchPointsPerSecond;
     public int totalControlGroups;
     public int totalMechBandwidth;
-    public List<RecipeDef> unlockedRecipes = [];
-    public int upgradeCooldownTicks, downgradeCooldownTicks = -1;
-    public int upgradeDurationTicks, downgradeDurationTicks = -1;
+    public int upgradeCooldownTicks;
+    public int upgradeDurationTicks;
 
     public string UpgradeDesc()
     {
@@ -48,6 +51,11 @@ public class Upgrade
         if (unlockedRecipes.NullOrEmpty() is false)
         {
             sb.AppendLine("GE.UnlocksRecipes".Translate(string.Join(", ", unlockedRecipes.Select(x => x.label))));
+        }
+
+        if (allowCaravans)
+        {
+            sb.AppendLine("GE.AllowsCaravans".Translate());
         }
 
         return sb.ToString().TrimEndNewlines();

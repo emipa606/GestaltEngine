@@ -94,6 +94,7 @@
             <upgradeCooldownTicks>180000</upgradeCooldownTicks>
             <upgradeDurationTicks>60000</upgradeDurationTicks>
             <powerConsumption>1000</powerConsumption>
+            <allowCaravans>false</allowCaravans>
           </li>
           <li>
             <!-- level 1 -->
@@ -110,6 +111,7 @@
             <researchPointsPerSecond>0.1</researchPointsPerSecond>
             <totalMechBandwidth>6</totalMechBandwidth>
             <totalControlGroups>1</totalControlGroups>
+            <allowCaravans>false</allowCaravans>
           </li>
           <li>
             <!-- level 2 -->
@@ -127,6 +129,7 @@
             <researchPointsPerSecond>0.15</researchPointsPerSecond>
             <totalMechBandwidth>12</totalMechBandwidth>
             <totalControlGroups>2</totalControlGroups>
+            <allowCaravans>false</allowCaravans>
           </li>
           <li>
             <!-- level 3 -->
@@ -144,6 +147,7 @@
             <researchPointsPerSecond>0.2</researchPointsPerSecond>
             <totalMechBandwidth>18</totalMechBandwidth>
             <totalControlGroups>3</totalControlGroups>
+            <allowCaravans>false</allowCaravans>
           </li>
           <li>
             <!-- level 4 -->
@@ -159,6 +163,7 @@
             <researchPointsPerSecond>0.25</researchPointsPerSecond>
             <totalMechBandwidth>24</totalMechBandwidth>
             <totalControlGroups>4</totalControlGroups>
+            <allowCaravans>false</allowCaravans>
           </li>
         </upgrades>
       </li>

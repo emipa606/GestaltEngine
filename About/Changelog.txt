@@ -1,5 +1,9 @@
 # Changelog for GestaltEngine
 
+1.5.4 - Added mod-option to allow gestalt controlled mech in caravans depending on gestalt-level
+Used DeepL to update translations for ChineseSimplified, French, German
+
+
 1.5.3 - Fixed the techprint patch not showing
 
 
