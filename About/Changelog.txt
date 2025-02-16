@@ -1,5 +1,8 @@
 # Changelog for GestaltEngine
 
+1.5.5 - Mechs should now remain in group 3 and 4 after loading a save
+
+
 1.5.4 - Added mod-option to allow gestalt controlled mech in caravans depending on gestalt-level
 Used DeepL to update translations for ChineseSimplified, French, German
 

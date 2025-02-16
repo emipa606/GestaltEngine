@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System;
+using HarmonyLib;
 using RimWorld;
 
 namespace GestaltEngine;
@@ -12,6 +13,12 @@ public static class Pawn_MechanitorTracker_TotalAvailableControlGroups
         if (__instance.pawn.TryGetGestaltEngineInstead(out var comp))
         {
             __result = comp.CurrentUpgrade.totalControlGroups;
+            return;
+        }
+
+        if (__instance.pawn.Name.ToStringFull == "Gestalt engine")
+        {
+            __result = Math.Max(10, __result);
         }
     }
 }
