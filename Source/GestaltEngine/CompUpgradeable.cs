@@ -10,32 +10,29 @@ namespace GestaltEngine;
 [HotSwappable]
 public class CompUpgradeable : ThingComp
 {
-    public Graphic cachedGraphic;
+    private Graphic cachedGraphic;
 
     public CompPowerTrader compPower;
-    public int cooldownPeriod;
-    public int downgradeProgressTick = -1;
+    private int cooldownPeriod;
+    private int downgradeProgressTick = -1;
     public int level;
 
-    protected Effecter progressBarEffecter;
-    public int upgradeOffset;
-    public int upgradeProgressTick = -1;
-    public CompProperties_Upgradeable Props => props as CompProperties_Upgradeable;
-    public int MinLevel => 0;
-    public int MaxLevel => Props.upgrades.Count - 1;
+    private Effecter progressBarEffecter;
+    private int upgradeOffset;
+    private int upgradeProgressTick = -1;
+    private CompProperties_Upgradeable Props => props as CompProperties_Upgradeable;
+    private int MinLevel => 0;
+    private int MaxLevel => Props.upgrades.Count - 1;
     public Upgrade CurrentUpgrade => Props.upgrades[level];
-    public bool Upgrading => upgradeOffset > 0;
-    public bool Downgrading => upgradeOffset < 0;
-    public bool OnCooldown => cooldownPeriod > Find.TickManager.TicksGame;
+    private bool Upgrading => upgradeOffset > 0;
+    private bool Downgrading => upgradeOffset < 0;
+    private bool OnCooldown => cooldownPeriod > Find.TickManager.TicksGame;
 
-    public Graphic OverlayGraphic
+    private Graphic OverlayGraphic
     {
         get
         {
-            if (cachedGraphic == null)
-            {
-                cachedGraphic = CurrentUpgrade.overlayGraphic.GraphicColoredFor(parent);
-            }
+            cachedGraphic ??= CurrentUpgrade.overlayGraphic.GraphicColoredFor(parent);
 
             return cachedGraphic;
         }
@@ -49,9 +46,9 @@ public class CompUpgradeable : ThingComp
         compPower = parent.TryGetComp<CompPowerTrader>();
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
         progressBarEffecter?.Cleanup();
     }
 
@@ -80,7 +77,7 @@ public class CompUpgradeable : ThingComp
             defaultLabel = "RM.Upgrade".Translate(),
             defaultDesc = "RM.UpgradeDesc".Translate(),
             icon = ContentFinder<Texture2D>.Get("UI/Buttons/GestaltUpgrade"),
-            action = delegate { StartUpgrade(1); }
+            action = delegate { startUpgrade(1); }
         };
 
         var downgrade = new Command_Action
@@ -88,7 +85,7 @@ public class CompUpgradeable : ThingComp
             defaultLabel = "RM.Downgrade".Translate(),
             defaultDesc = "RM.DowngradeDesc".Translate(),
             icon = ContentFinder<Texture2D>.Get("UI/Buttons/GestaltDowngrade"),
-            action = delegate { StartUpgrade(-1); }
+            action = delegate { startUpgrade(-1); }
         };
 
         var upgradeInstant = new Command_Action
@@ -97,7 +94,7 @@ public class CompUpgradeable : ThingComp
             defaultDesc = "RM.UpgradeDesc".Translate(),
             action = delegate
             {
-                StartUpgrade(1);
+                startUpgrade(1);
                 SetLevel();
             }
         };
@@ -108,12 +105,12 @@ public class CompUpgradeable : ThingComp
             defaultDesc = "RM.DowngradeDesc".Translate(),
             action = delegate
             {
-                StartUpgrade(-1);
+                startUpgrade(-1);
                 SetLevel();
             }
         };
 
-        if (compPower.PowerOn is false)
+        if (!compPower.PowerOn)
         {
             upgrade.Disable("NoPower".Translate());
             downgrade.Disable("NoPower".Translate());
@@ -187,17 +184,18 @@ public class CompUpgradeable : ThingComp
         return sb.ToString().TrimEndNewlines();
     }
 
-    public void StartUpgrade(int offset)
+    private void startUpgrade(int offset)
     {
         SoundDefOf.DragSlider.PlayOneShotOnCamera();
         upgradeOffset = offset;
-        if (offset < 0)
+        switch (offset)
         {
-            downgradeProgressTick = 0;
-        }
-        else if (offset > 0)
-        {
-            upgradeProgressTick = 0;
+            case < 0:
+                downgradeProgressTick = 0;
+                break;
+            case > 0:
+                upgradeProgressTick = 0;
+                break;
         }
     }
 
@@ -218,10 +216,7 @@ public class CompUpgradeable : ThingComp
         {
             upgradeProgressTick++;
 
-            if (progressBarEffecter == null)
-            {
-                progressBarEffecter = EffecterDefOf.ProgressBar.Spawn();
-            }
+            progressBarEffecter ??= EffecterDefOf.ProgressBar.Spawn();
 
             progressBarEffecter.EffectTick(parent, TargetInfo.Invalid);
             var mote = ((SubEffecter_ProgressBar)progressBarEffecter.children[0]).mote;
@@ -236,10 +231,7 @@ public class CompUpgradeable : ThingComp
         else if (Downgrading)
         {
             downgradeProgressTick++;
-            if (progressBarEffecter == null)
-            {
-                progressBarEffecter = EffecterDefOf.ProgressBar.Spawn();
-            }
+            progressBarEffecter ??= EffecterDefOf.ProgressBar.Spawn();
 
             progressBarEffecter.EffectTick(parent, TargetInfo.Invalid);
             var mote = ((SubEffecter_ProgressBar)progressBarEffecter.children[0]).mote;
@@ -296,15 +288,18 @@ public class CompUpgradeable : ThingComp
 
     protected virtual void SetLevel()
     {
-        if (upgradeOffset < 0)
+        switch (upgradeOffset)
         {
-            cooldownPeriod = Find.TickManager.TicksGame + CurrentUpgrade.downgradeCooldownTicks;
-            Messages.Message("RM.FinishedDowngrade".Translate(parent.LabelCap), parent, MessageTypeDefOf.NeutralEvent);
-        }
-        else if (upgradeOffset > 0)
-        {
-            cooldownPeriod = Find.TickManager.TicksGame + CurrentUpgrade.upgradeCooldownTicks;
-            Messages.Message("RM.FinishedUpgrade".Translate(parent.LabelCap), parent, MessageTypeDefOf.NeutralEvent);
+            case < 0:
+                cooldownPeriod = Find.TickManager.TicksGame + CurrentUpgrade.downgradeCooldownTicks;
+                Messages.Message("RM.FinishedDowngrade".Translate(parent.LabelCap), parent,
+                    MessageTypeDefOf.NeutralEvent);
+                break;
+            case > 0:
+                cooldownPeriod = Find.TickManager.TicksGame + CurrentUpgrade.upgradeCooldownTicks;
+                Messages.Message("RM.FinishedUpgrade".Translate(parent.LabelCap), parent,
+                    MessageTypeDefOf.NeutralEvent);
+                break;
         }
 
         level += upgradeOffset;

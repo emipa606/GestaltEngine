@@ -1,5 +1,8 @@
 # Changelog for GestaltEngine
 
+1.6.0 - Mod updated for 1.6 and passed autotests
+
+
 1.5.5 - Mechs should now remain in group 3 and 4 after loading a save
 
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: gestalt engine -->
+  <RM_GestaltEngine.label>gestalt engine</RM_GestaltEngine.label>
+  <!-- EN: An outlawed persona-class supercomputer designed as both a central command and control hub for local mechanoids.\n\nWhile the baseline model is rather simple, it can be upgraded with more features as it has plenty of room for expansion. -->
+  <RM_GestaltEngine.description>An outlawed persona-class supercomputer designed as both a central command and control hub for local mechanoids.
+
+While the baseline model is rather simple, it can be upgraded with more features as it has plenty of room for expansion.</RM_GestaltEngine.description>
+</LanguageData>

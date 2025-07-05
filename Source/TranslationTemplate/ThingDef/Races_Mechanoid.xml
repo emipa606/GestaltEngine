@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: matriarch -->
+  <RM_Mech_Matriarch.label>matriarch</RM_Mech_Matriarch.label>
+  <!-- EN: Fast human-sized gestator mechanoids built for maintaining and gestating different kind of mechanoids. Their bodies are light and lack any real armor, as well as any combat abilities. -->
+  <RM_Mech_Matriarch.description>Fast human-sized gestator mechanoids built for maintaining and gestating different kind of mechanoids. Their bodies are light and lack any real armor, as well as any combat abilities.</RM_Mech_Matriarch.description>
+  <!-- EN: left fist -->
+  <RM_Mech_Matriarch.tools.left_fist-0.label>left fist</RM_Mech_Matriarch.tools.left_fist-0.label>
+  <!-- EN: fist -->
+  <RM_Mech_Matriarch.tools.left_fist-0.labelNoLocation>fist</RM_Mech_Matriarch.tools.left_fist-0.labelNoLocation>
+  <!-- EN: right fist -->
+  <RM_Mech_Matriarch.tools.right_fist-0.label>right fist</RM_Mech_Matriarch.tools.right_fist-0.label>
+  <!-- EN: fist -->
+  <RM_Mech_Matriarch.tools.right_fist-0.labelNoLocation>fist</RM_Mech_Matriarch.tools.right_fist-0.labelNoLocation>
+  <!-- EN: head -->
+  <RM_Mech_Matriarch.tools.head-0.label>head</RM_Mech_Matriarch.tools.head-0.label>
+  <!-- EN: left fist -->
+  <RM_Mech_Matriarch.tools.left_fist-1.label>left fist</RM_Mech_Matriarch.tools.left_fist-1.label>
+  <!-- EN: right fist -->
+  <RM_Mech_Matriarch.tools.right_fist-1.label>right fist</RM_Mech_Matriarch.tools.right_fist-1.label>
+  <!-- EN: head -->
+  <RM_Mech_Matriarch.tools.head-1.label>head</RM_Mech_Matriarch.tools.head-1.label>
+</LanguageData>

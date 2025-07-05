@@ -7,10 +7,10 @@ namespace GestaltEngine;
 
 public class Upgrade
 {
-    public readonly int downgradeCooldownTicks = -1;
-    public readonly int downgradeDurationTicks = -1;
     public readonly List<RecipeDef> unlockedRecipes = [];
     public bool allowCaravans;
+    public int downgradeCooldownTicks = -1;
+    public int downgradeDurationTicks = -1;
     public float heatPerSecond;
     public GraphicData overlayGraphic;
     public float powerConsumption;
@@ -48,7 +48,7 @@ public class Upgrade
             sb.AppendLine("GE.TotalControlGroups".Translate(totalControlGroups));
         }
 
-        if (unlockedRecipes.NullOrEmpty() is false)
+        if (!unlockedRecipes.NullOrEmpty())
         {
             sb.AppendLine("GE.UnlocksRecipes".Translate(string.Join(", ", unlockedRecipes.Select(x => x.label))));
         }

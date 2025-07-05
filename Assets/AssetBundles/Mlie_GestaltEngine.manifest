@@ -1,0 +1,42 @@
+ManifestFileVersion: 0
+CRC: 970827850
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7eb8305b5751ad855b8bcb8d019a1044
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 7eb8305b5751ad855b8bcb8d019a1044
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Building/Biotech/GestaltEngine_Base.png
+- Assets/Data/Mlie.GestaltEngine/Textures/UI/Buttons/ToggleAllegianceOverlays.png
+- Assets/Data/Mlie.GestaltEngine/Textures/UI/Buttons/HackMechanoid.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Building/Biotech/Tier4_GestaltEngine.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Building/Biotech/Tier2_GestaltEngine.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/AllegianceOverlays/Matriarch_south.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/MatriarchAncient_north.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Building/Biotech/GestaltEngine_MenuIcon.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/MatriarchClean_north.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/MatriarchAncient_south.png
+- Assets/Data/Mlie.GestaltEngine/Textures/UI/Buttons/GestaltUpgrade.png
+- Assets/Data/Mlie.GestaltEngine/Textures/UI/Buttons/GestaltDowngrade.png
+- Assets/Data/Mlie.GestaltEngine/Textures/UI/Buttons/AllowResearch.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Building/Biotech/Tier3_GestaltEngine.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/AllegianceOverlays/Matriarch_north.png
+- Assets/Data/Mlie.GestaltEngine/Textures/UI/Buttons/ConnectMechanoid.png
+- Assets/Data/Mlie.GestaltEngine/Textures/UI/Buttons/GestaltOverseer.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/MatriarchAncient_east.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/MatriarchClean_east.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Building/Biotech/Tier1_GestaltEngine.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/AllegianceOverlays/Matriarch_east.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Building/Biotech/Tier0_GestaltEngine.png
+- Assets/Data/Mlie.GestaltEngine/Textures/Things/Pawn/Mechanoid/MatriarchClean_south.png
+Dependencies: []

@@ -10,13 +10,13 @@ namespace GestaltEngine;
 public class CompGestaltEngine : CompUpgradeable
 {
     public static readonly HashSet<CompGestaltEngine> compGestaltEngines = [];
-    protected Effecter connectMechEffecter;
-    protected Effecter connectProgressBarEffecter;
-    public int connectTick = -1;
-    public LocalTargetInfo curTarget = LocalTargetInfo.Invalid;
+    private Effecter connectMechEffecter;
+    private Effecter connectProgressBarEffecter;
+    private int connectTick = -1;
+    private LocalTargetInfo curTarget = LocalTargetInfo.Invalid;
     public Pawn dummyPawn;
-    public int hackCooldownTicks;
-    public bool MechanitorActive => compPower.PowerOn && dummyPawn.mechanitor.TotalBandwidth > 0;
+    private int hackCooldownTicks;
+    private bool MechanitorActive => compPower.PowerOn && dummyPawn.mechanitor.TotalBandwidth > 0;
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
@@ -38,10 +38,10 @@ public class CompGestaltEngine : CompUpgradeable
         dummyPawn.story.title = "";
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
         _ = compGestaltEngines.Remove(this);
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
     }
 
     public override void ReceiveCompSignal(string signal)
@@ -84,8 +84,8 @@ public class CompGestaltEngine : CompUpgradeable
             icon = ContentFinder<Texture2D>.Get("UI/Buttons/ConnectMechanoid"),
             action = delegate
             {
-                Find.Targeter.BeginTargeting(ConnectMechanoidTargetParameters(), StartConnect, Highlight,
-                    CanConnect);
+                Find.Targeter.BeginTargeting(connectMechanoidTargetParameters(), startConnect, highlight,
+                    canConnect);
             }
         };
         var hackMech = new Command_Action
@@ -95,9 +95,9 @@ public class CompGestaltEngine : CompUpgradeable
             icon = ContentFinder<Texture2D>.Get("UI/Buttons/HackMechanoid"),
             action = delegate
             {
-                Find.Targeter.BeginTargeting(ConnectNonColonyMechanoidTargetParameters(), StartConnectNonColonyMech,
-                    Highlight,
-                    CanConnectNonColonyMech);
+                Find.Targeter.BeginTargeting(connectNonColonyMechanoidTargetParameters(), startConnectNonColonyMech,
+                    highlight,
+                    canConnectNonColonyMech);
             }
         };
         if (curTarget.IsValid)
@@ -105,13 +105,13 @@ public class CompGestaltEngine : CompUpgradeable
             connectMech.Disable("RM.BusyConnectingMechanoid".Translate());
             hackMech.Disable("RM.BusyConnectingMechanoid".Translate());
         }
-        else if (MechanitorActive is false)
+        else if (!MechanitorActive)
         {
             connectMech.Disable("RM.IncapableOfConnectingMechanoid".Translate());
             hackMech.Disable("RM.IncapableOfConnectingMechanoid".Translate());
         }
 
-        if (hackMech.disabled is false && hackCooldownTicks > Find.TickManager.TicksGame)
+        if (!hackMech.disabled && hackCooldownTicks > Find.TickManager.TicksGame)
         {
             hackMech.Disable(
                 "RM.OnCooldown".Translate((hackCooldownTicks - Find.TickManager.TicksGame)
@@ -122,7 +122,7 @@ public class CompGestaltEngine : CompUpgradeable
         yield return hackMech;
     }
 
-    public TargetingParameters ConnectMechanoidTargetParameters()
+    private TargetingParameters connectMechanoidTargetParameters()
     {
         return new TargetingParameters
         {
@@ -132,11 +132,11 @@ public class CompGestaltEngine : CompUpgradeable
             canTargetMechs = true,
             canTargetAnimals = false,
             canTargetLocations = false,
-            validator = x => CanConnect((LocalTargetInfo)x)
+            validator = x => canConnect((LocalTargetInfo)x)
         };
     }
 
-    public TargetingParameters ConnectNonColonyMechanoidTargetParameters()
+    private TargetingParameters connectNonColonyMechanoidTargetParameters()
     {
         return new TargetingParameters
         {
@@ -146,29 +146,29 @@ public class CompGestaltEngine : CompUpgradeable
             canTargetMechs = true,
             canTargetAnimals = false,
             canTargetLocations = false,
-            validator = x => CanConnectNonColonyMech((LocalTargetInfo)x)
+            validator = x => canConnectNonColonyMech((LocalTargetInfo)x)
         };
     }
 
-    private int MechControlTime(Pawn mech)
+    private static int mechControlTime(Pawn mech)
     {
         return Mathf.RoundToInt(mech.GetStatValue(StatDefOf.ControlTakingTime) * 60f);
     }
 
-    public bool CanConnect(LocalTargetInfo target)
+    private bool canConnect(LocalTargetInfo target)
     {
         var mech = target.Pawn;
-        return mech != null && CanControlMech(dummyPawn, mech);
+        return mech != null && canControlMech(dummyPawn, mech);
     }
 
-    public bool CanConnectNonColonyMech(LocalTargetInfo target)
+    private bool canConnectNonColonyMech(LocalTargetInfo target)
     {
         var mech = target.Pawn;
-        return mech != null && CanControlNonColonyMech(dummyPawn, mech) && HasEnoughBandwidth(dummyPawn, mech)
+        return mech != null && canControlNonColonyMech(dummyPawn, mech) && hasEnoughBandwidth(dummyPawn, mech)
                && mech.Faction != parent.Faction;
     }
 
-    public static AcceptanceReport CanControlMech(Pawn pawn, Pawn mech)
+    private static AcceptanceReport canControlMech(Pawn pawn, Pawn mech)
     {
         if (pawn.mechanitor == null || !mech.IsColonyMech || mech.Downed || mech.Dead || mech.IsAttacking())
         {
@@ -188,7 +188,7 @@ public class CompGestaltEngine : CompUpgradeable
         return true;
     }
 
-    public static AcceptanceReport CanControlNonColonyMech(Pawn pawn, Pawn mech)
+    private static AcceptanceReport canControlNonColonyMech(Pawn pawn, Pawn mech)
     {
         if (pawn.mechanitor == null || mech.Downed || mech.Dead)
         {
@@ -208,28 +208,28 @@ public class CompGestaltEngine : CompUpgradeable
         return true;
     }
 
-    public bool HasEnoughBandwidth(Pawn pawn, Pawn mech)
+    private static bool hasEnoughBandwidth(Pawn pawn, Pawn mech)
     {
         var num = pawn.mechanitor.TotalBandwidth - pawn.mechanitor.UsedBandwidth;
         var statValue = mech.GetStatValue(StatDefOf.BandwidthCost);
         return !(num < statValue);
     }
 
-    public void StartConnect(LocalTargetInfo target)
+    private void startConnect(LocalTargetInfo target)
     {
         curTarget = target;
-        connectTick = Find.TickManager.TicksGame + MechControlTime(curTarget.Pawn);
-        PawnUtility.ForceWait(curTarget.Pawn, MechControlTime(curTarget.Pawn), parent, true);
-        if (!HasEnoughBandwidth(dummyPawn, curTarget.Pawn))
+        connectTick = Find.TickManager.TicksGame + mechControlTime(curTarget.Pawn);
+        PawnUtility.ForceWait(curTarget.Pawn, mechControlTime(curTarget.Pawn), parent, true);
+        if (!hasEnoughBandwidth(dummyPawn, curTarget.Pawn))
         {
             Messages.Message("RM.NotEnoughBandwidth".Translate(), curTarget.Pawn, MessageTypeDefOf.CautionInput);
         }
     }
 
-    public void StartConnectNonColonyMech(LocalTargetInfo target)
+    private void startConnectNonColonyMech(LocalTargetInfo target)
     {
         curTarget = target;
-        var connectPeriod = MechControlTime(curTarget.Pawn) * 2;
+        var connectPeriod = mechControlTime(curTarget.Pawn) * 2;
         connectTick = Find.TickManager.TicksGame + connectPeriod;
     }
 
@@ -251,18 +251,18 @@ public class CompGestaltEngine : CompUpgradeable
         if (curTarget.IsValid && connectTick != -1)
         {
             var mech = curTarget.Pawn;
-            if (mech.Faction == dummyPawn.Faction && !CanConnect(mech)
-                || mech.Faction != dummyPawn.Faction && !CanConnectNonColonyMech(mech)
-                || MechanitorActive is false)
+            if (mech.Faction == dummyPawn.Faction && !canConnect(mech)
+                || mech.Faction != dummyPawn.Faction && !canConnectNonColonyMech(mech)
+                || !MechanitorActive)
             {
-                Reset();
+                reset();
             }
             else
             {
-                ConnectEffects(mech);
+                connectEffects(mech);
                 if (Find.TickManager.TicksGame >= connectTick)
                 {
-                    Connect(curTarget, dummyPawn);
+                    connect(curTarget, dummyPawn);
                 }
             }
         }
@@ -278,14 +278,14 @@ public class CompGestaltEngine : CompUpgradeable
         }
     }
 
-    private void ConnectEffects(Pawn mech)
+    private void connectEffects(Pawn mech)
     {
         connectProgressBarEffecter ??= EffecterDefOf.ProgressBar.Spawn();
         connectProgressBarEffecter.EffectTick(parent, TargetInfo.Invalid);
         var mote = ((SubEffecter_ProgressBar)connectProgressBarEffecter.children[0]).mote;
         mote.progress = 1f - ((connectTick - Find.TickManager.TicksGame) / (mech.Faction != parent.Faction
-            ? MechControlTime(mech) * 2f
-            : MechControlTime(mech)));
+            ? mechControlTime(mech) * 2f
+            : mechControlTime(mech)));
         mote.offsetZ = -0.8f;
 
         if (connectMechEffecter == null)
@@ -297,9 +297,9 @@ public class CompGestaltEngine : CompUpgradeable
         connectMechEffecter.EffectTick(parent, mech);
     }
 
-    private void Connect(LocalTargetInfo target, Pawn pawn)
+    private void connect(LocalTargetInfo target, Pawn pawn)
     {
-        Reset();
+        reset();
         var mech = target.Pawn;
         if (mech.Faction != dummyPawn.Faction)
         {
@@ -311,7 +311,7 @@ public class CompGestaltEngine : CompUpgradeable
         pawn.relations.AddDirectRelation(PawnRelationDefOf.Overseer, mech);
     }
 
-    private void Reset()
+    private void reset()
     {
         connectProgressBarEffecter.Cleanup();
         connectProgressBarEffecter = null;
@@ -327,7 +327,7 @@ public class CompGestaltEngine : CompUpgradeable
         connectTick = -1;
     }
 
-    private void Highlight(LocalTargetInfo target)
+    private static void highlight(LocalTargetInfo target)
     {
         if (target.IsValid)
         {

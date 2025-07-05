@@ -7,6 +7,11 @@
     " matriarch",
     " control"
   ],
-  "PreviewVersion": "1.5",
-  "LastXmlCleaning": "2025-02-16T20:56:13.8909062+01:00"
+  "PreviewVersion": "1.6",
+  "LastXmlCleaning": "2025-07-05T14:33:20.1612863+02:00",
+  "Patches": true,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 45885.0,
+  "LinesOfXML": 24853.0
 }
