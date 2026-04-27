@@ -1,28 +1,28 @@
 # [Gestalt Engine (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=3392334612)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of Helixiens mod https://steamcommunity.com/sharedfiles/filedetails/?id=3042401691
 with permission since they had no time to support it
 
 - All features of this mod is now included in [Reinforced Mechanoid 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3400713047)
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
-![Image](https://i.imgur.com/IKjHkEj.png)
+![Image](https://img.litet.net/IKjHkEj.png)
 
 A detailed record of all changes can be found in the “Changelog” tab. Please check there
 
 **Current mod version: 1.1.1-Specter-rev1**
 **Supports Rimworld version: 1.4**
 
-![Image](https://i.imgur.com/NuczGAx.png)
+![Image](https://img.litet.net/NuczGAx.png)
 
 This is heavily WIP. Expect changes, fixes and more down the line!
 
-![Image](https://i.imgur.com/90RWWYe.png)
+![Image](https://img.litet.net/90RWWYe.png)
 
 # ”I'm Sorry Dave, I'm Afraid I Can't Do That!"
 
@@ -31,17 +31,17 @@ This is heavily WIP. Expect changes, fixes and more down the line!
 
 Every aspect of it was made to fit into Rimworld perfectly. From the artstyle, do the way it works. For people who disagree with my balancing, the mod includes extensive mod options to tweak it to your liking!
 
-![Image](https://i.imgur.com/uCTaS4j.png)
+![Image](https://img.litet.net/uCTaS4j.png)
 
-![Image](https://i.imgur.com/belBjL8.png)
+![Image](https://img.litet.net/belBjL8.png)
 
-![Image](https://i.imgur.com/BHS9Lyj.png)
+![Image](https://img.litet.net/BHS9Lyj.png)
 
-![Image](https://i.imgur.com/ySBnwIC.png)
+![Image](https://img.litet.net/ySBnwIC.png)
 
 There are no patches needed as of now.
 
-![Image](https://i.imgur.com/P2ODCWn.png)
+![Image](https://img.litet.net/P2ODCWn.png)
 
 Some often asked questions, answered already.
 
@@ -55,7 +55,7 @@ Some often asked questions, answered already.
 **Q:** Is this mod compatible with Combat Extended? 
 **A:** Most likely yes! I think?
 
-![Image](https://i.imgur.com/kjEZHTg.png)
+![Image](https://img.litet.net/kjEZHTg.png)
 
 The people without this mod could not have been made:
 
@@ -66,15 +66,15 @@ Based on the books by Richard K. Morgan, check them out, they are great!
 
 [ CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-[![Image](https://i.imgur.com/0txWCGk.png)](https://steamcommunity.com/workshop/filedetails/?id=2941742522)
+[![Image](https://img.litet.net/0txWCGk.png)](https://steamcommunity.com/workshop/filedetails/?id=2941742522)
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -82,4 +82,4 @@ Based on the books by Richard K. Morgan, check them out, they are great!
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/GestaltEngine?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3392334612) | tags:  matriarch,  control
+[![Image](https://img.shields.io/github/v/release/emipa606/GestaltEngine?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3392334612) | tags: matriarch, control

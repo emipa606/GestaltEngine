@@ -30,36 +30,36 @@
     <li>Mlie.ReinforcedMechanoid2</li>
     <li>FerretWithACatHat.MechanitorWorkType</li>
   </incompatibleWith>
-  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+  <description>[img]https://img.litet.net/logos/Info.png[/img]
 Update of Helixiens mod https://steamcommunity.com/sharedfiles/filedetails/?id=3042401691
 with permission since they had no time to support it
 
 - All features of this mod is now included in [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3400713047]Reinforced Mechanoid 2[/url]
 
-[img]https://i.imgur.com/pufA0kM.png[/img]
+[img]https://img.litet.net/logos/Notice.png[/img]
 
 [table]
-    [tr][td][url=https://dsc.gg/mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td] [td][url=https://github.com/emipa606/GestaltEngine][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [tr][td][url=https://discord.gg/h5TY6DA][img]https://img.litet.net/logos/Discord.png[/img][/url][/td] [td][url=https://github.com/emipa606/GestaltEngine][img]https://img.litet.net/logos/Github.png[/img][/url][/td]
     [/tr]
     [tr]
-        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
-        [td][img]https://i.imgur.com/6KqTKks.png[/img][/td]
+        [td][img]https://img.litet.net/logos/SafeToAdd.png[/img][/td]
+        [td][img]https://img.litet.net/logos/UnsafeToRemove.png[/img][/td]
     [/tr]
 [/table]
 	
-[img]https://i.imgur.com/Z4GOv8H.png[/img]
-[img]https://i.imgur.com/IKjHkEj.png[/img]
+[img]https://img.litet.net/logos/OriginalDescription.png[/img]
+[img]https://img.litet.net/IKjHkEj.png[/img]
 
 A detailed record of all changes can be found in the “Changelog” tab. Please check there
 
 [b]Current mod version: 1.1.1-Specter-rev1[/b]
 [b]Supports Rimworld version: 1.4[/b]
 
-[img]https://i.imgur.com/NuczGAx.png[/img]
+[img]https://img.litet.net/NuczGAx.png[/img]
 
 This is heavily WIP. Expect changes, fixes and more down the line!
 
-[img]https://i.imgur.com/90RWWYe.png[/img]
+[img]https://img.litet.net/90RWWYe.png[/img]
 
 [h1]”I'm Sorry Dave, I'm Afraid I Can't Do That!"[/h1]
 
@@ -67,16 +67,16 @@ This is heavily WIP. Expect changes, fixes and more down the line!
 
 Every aspect of it was made to fit into Rimworld perfectly. From the artstyle, do the way it works. For people who disagree with my balancing, the mod includes extensive mod options to tweak it to your liking!
 
-[img]https://i.imgur.com/uCTaS4j.png[/img]
+[img]https://img.litet.net/uCTaS4j.png[/img]
 
-[img]https://i.imgur.com/belBjL8.png[/img]
-[img]https://i.imgur.com/BHS9Lyj.png[/img]
+[img]https://img.litet.net/belBjL8.png[/img]
+[img]https://img.litet.net/BHS9Lyj.png[/img]
 
-[img]https://i.imgur.com/ySBnwIC.png[/img]
+[img]https://img.litet.net/ySBnwIC.png[/img]
 
 There are no patches needed as of now.
 
-[img]https://i.imgur.com/P2ODCWn.png[/img]
+[img]https://img.litet.net/P2ODCWn.png[/img]
 
 Some often asked questions, answered already.
 
@@ -90,7 +90,7 @@ Some often asked questions, answered already.
 [b]Q:[/b] Is this mod compatible with Combat Extended? 
 [b]A:[/b] Most likely yes! I think?
 
-[img]https://i.imgur.com/kjEZHTg.png[/img]
+[img]https://img.litet.net/kjEZHTg.png[/img]
 
 The people without this mod could not have been made:
 
@@ -101,19 +101,19 @@ Based on the books by Richard K. Morgan, check them out, they are great!
 
 [url=https://creativecommons.org/licenses/by-nc-nd/4.0/] CC BY-NC-ND 4.0[/url]
 
-[url=https://steamcommunity.com/workshop/filedetails/?id=2941742522][img]https://i.imgur.com/0txWCGk.png[/img][/url]
+[url=https://steamcommunity.com/workshop/filedetails/?id=2941742522][img]https://img.litet.net/0txWCGk.png[/img][/url]
 
-[img]https://i.imgur.com/PwoNOj4.png[/img]
+[img]https://img.litet.net/logos/ReportingIssues.png[/img]
 [list]
 [*] See if the the error persists if you just have this mod and its requirements active.
 [*] If not, try adding your other mods until it happens again.
-[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] or the standalone [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader[/url] and command Ctrl+F12
+[*] Always post your log using the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Log Uploader[/url]
 [*] For best support, please use the Discord-channel for error-reporting.
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [*] Use [url=https://github.com/RimSort/RimSort/releases/latest]RimSort[/url] to sort your mods
 [/list] 
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3392334612][img]https://img.shields.io/github/v/release/emipa606/GestaltEngine?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  matriarch,  control</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.6.0</modVersion>
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3392334612][img]https://img.shields.io/github/v/release/emipa606/GestaltEngine?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags: matriarch, control</description>
+  <modVersion IgnoreIfNoMatchingField="True">1.6.1</modVersion>
 </ModMetaData>

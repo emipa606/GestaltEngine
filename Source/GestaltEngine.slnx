@@ -3,4 +3,36 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="GestaltEngine/GestaltEngine.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/ResearchProjectDefs/">
+    <File Path="../1.6/Defs/ResearchProjectDefs/ResearchProjects_4_MultiAnalyzer.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/GestaltEngineKeys.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Patches/">
+    <File Path="../1.6/Patches/Biotech.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/ThingDefs_Races/">
+    <File Path="../1.6/Defs/ThingDefs_Races/Races_Mechanoid.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/ThingDefs_Buildings/">
+    <File Path="../1.6/Defs/ThingDefs_Buildings/Buildings_Gestalt.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/ModOptionCategories/">
+    <File Path="../1.6/Defs/ModOptionCategories/ModOptionCategories.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/RecipeDefs/">
+    <File Path="../1.6/Defs/RecipeDefs/Recipes_MechGestator_Medium.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Patches/ModSettings/">
+    <File Path="../1.6/Patches/ModSettings/Slider-Patches.xml" />
+    <File Path="../1.6/Patches/ModSettings/Toggleable-Patches-Royalty-DLC.xml" />
+    <File Path="../1.6/Patches/ModSettings/Toggleable-Patches.xml" />
+  </Folder>
 </Solution>
