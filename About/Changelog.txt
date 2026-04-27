@@ -1,5 +1,8 @@
 # Changelog for GestaltEngine
 
+1.6.2 - FIx when using non-english language, again
+
+
 1.6.1 - Fix when using non-english language
 
 

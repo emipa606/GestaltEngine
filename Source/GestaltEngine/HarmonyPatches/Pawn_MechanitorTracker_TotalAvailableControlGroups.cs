@@ -16,7 +16,8 @@ public static class Pawn_MechanitorTracker_TotalAvailableControlGroups
             return;
         }
 
-        if (__instance.pawn.def.defName == "RM_GestaltEngine")
+        if (string.Equals(__instance.pawn.Name.ToStringFull, GE_DefOf.RM_GestaltEngine.label,
+                StringComparison.CurrentCultureIgnoreCase))
         {
             __result = Math.Max(10, __result);
         }
