@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using Verse;
 
@@ -15,21 +14,26 @@ public static class Pawn_MechanitorTracker_TotalBandwidth
             return;
         }
 
-        if (comp.compPower.PowerOn)
-        {
-            __result = comp.CurrentUpgrade.totalMechBandwidth;
-            foreach (var hediff in comp.dummyPawn.health.hediffSet.hediffs.OfType<Hediff_BandNode>())
-            {
-                var statOffset = hediff.CurStage.statOffsets.FirstOrDefault(x => x.stat == StatDefOf.MechBandwidth);
-                if (statOffset != null)
-                {
-                    __result += (int)statOffset.value;
-                }
-            }
-        }
-        else
+        if (comp.compPower?.PowerOn != true)
         {
             __result = 0;
+            return;
+        }
+
+        __result = comp.CurrentUpgrade?.totalMechBandwidth ?? 0;
+        var hediffs = comp.dummyPawn?.health?.hediffSet?.hediffs;
+        if (hediffs == null)
+        {
+            return;
+        }
+
+        foreach (var hediff in hediffs)
+        {
+            var statOffset = hediff.CurStage?.statOffsets?.FirstOrDefault(x => x.stat == StatDefOf.MechBandwidth);
+            if (statOffset != null)
+            {
+                __result += (int)statOffset.value;
+            }
         }
     }
 }
