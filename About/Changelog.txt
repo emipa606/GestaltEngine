@@ -1,5 +1,8 @@
 # Changelog for GestaltEngine
 
+1.6.3 - Matriarch should be able to use subcore encoder
+
+
 1.6.2 - FIx when using non-english language, again
 
 
