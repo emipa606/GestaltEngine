@@ -1,5 +1,8 @@
 # Changelog for GestaltEngine
 
+1.6.6 - Code-cleanup
+
+
 1.6.5 - No game over screen when having an active Gestalt engine.
 Band nodes from other mods like Alpha mechs will affect the Gestalt Engine.
 Removing band nodes will not trigger loosing of all bandwidth.

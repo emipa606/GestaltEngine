@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
@@ -7,126 +8,115 @@ using Verse;
 
 namespace GestaltEngine;
 
+[StaticConstructorOnStartup]
 [HarmonyPatch(typeof(CompBandNode), nameof(CompBandNode.CompGetGizmosExtra))]
 public static class CompBandNode_CompGetGizmosExtra
 {
+    private static readonly Texture2D BandNodeTuningIcon = ContentFinder<Texture2D>.Get("UI/Gizmos/BandNodeTuning");
+
     public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, CompBandNode __instance)
     {
         foreach (var gizmo in __result)
         {
-            if (gizmo is not Command_Action command ||
-                command.icon != ContentFinder<Texture2D>.Get("UI/Gizmos/BandNodeTuning"))
+            if (!IsBandNodeTuningCommand(gizmo))
             {
                 yield return gizmo;
                 continue;
             }
 
-            var commandAction = new Command_Action
-            {
-                defaultLabel = __instance.tunedTo == null
-                    ? "BandNodeTuneTo".Translate() + "..."
-                    : "BandNodeRetuneTo".Translate() + "...",
-                defaultDesc = __instance.tunedTo == null
-                    ? "BandNodeTuningDesc".Translate("PeriodSeconds".Translate(__instance.Props.tuneSeconds))
-                    : "BandNodeRetuningDesc".Translate($"{__instance.Props.retuneDays} " + "Days".Translate())
-            };
-            commandAction.onHover = (Action)Delegate.Combine(commandAction.onHover, (Action)delegate
-            {
-                var pawn = __instance.tuningTo ?? __instance.tunedTo;
-                if (pawn == null)
-                {
-                    return;
-                }
-
-                GenDraw.DrawLineBetween(__instance.parent.DrawPos,
-                    pawn.TryGetGestaltEngineInstead(out var comp) ? comp.parent.DrawPos : pawn.DrawPos);
-            });
-            var foundMechanitor = false;
-
-            foreach (var item in __instance.parent.Map.mapPawns.AllPawnsSpawned)
-            {
-                if (!MechanitorUtility.IsMechanitor(item) || item == __instance.tunedTo)
-                {
-                    continue;
-                }
-
-                foundMechanitor = true;
-                break;
-            }
-
-            foreach (var comp in CompGestaltEngine.compGestaltEngines)
-            {
-                if (comp.parent.Map != __instance.parent.Map)
-                {
-                    continue;
-                }
-
-                if (!MechanitorUtility.IsMechanitor(comp.dummyPawn) || comp.dummyPawn == __instance.tunedTo)
-                {
-                    continue;
-                }
-
-                foundMechanitor = true;
-                break;
-            }
-
-            commandAction.disabled = !foundMechanitor;
-            commandAction.icon = ContentFinder<Texture2D>.Get("UI/Gizmos/BandNodeTuning");
-            commandAction.action = (Action)Delegate.Combine(commandAction.action, (Action)delegate
-            {
-                var list = new List<FloatMenuOption>();
-                foreach (var item2 in __instance.parent.Map.mapPawns.AllPawnsSpawned)
-                {
-                    if (!MechanitorUtility.IsMechanitor(item2) || item2 == __instance.tunedTo)
-                    {
-                        continue;
-                    }
-
-                    var localPawn = item2;
-                    var toStringFull = item2.Name.ToStringFull;
-                    toStringFull = __instance.tunedTo != null
-                        ? $"{toStringFull} ({__instance.RetuneTimeTicks.ToStringTicksToPeriod()})"
-                        : toStringFull + ($" ({__instance.Props.tuneSeconds} " +
-                                          "SecondsLower".Translate() + ")");
-                    list.Add(new FloatMenuOption(toStringFull, delegate
-                    {
-                        __instance.tuningTimeLeft = __instance.tunedTo == null
-                            ? __instance.TuningTimeTicks
-                            : __instance.RetuneTimeTicks;
-                        __instance.tuningTo = localPawn;
-                    }));
-                }
-
-                foreach (var comp in CompGestaltEngine.compGestaltEngines)
-                {
-                    if (comp.parent.Map != __instance.parent.Map)
-                    {
-                        continue;
-                    }
-
-                    if (!MechanitorUtility.IsMechanitor(comp.dummyPawn) || comp.dummyPawn == __instance.tunedTo)
-                    {
-                        continue;
-                    }
-
-                    var localPawn = comp.dummyPawn;
-                    var toStringFull = comp.dummyPawn.Name.ToStringFull;
-                    toStringFull = __instance.tunedTo != null
-                        ? $"{toStringFull} ({__instance.RetuneTimeTicks.ToStringTicksToPeriod()})"
-                        : toStringFull + ($" ({__instance.Props.tuneSeconds} " +
-                                          "SecondsLower".Translate() + ")");
-                    list.Add(new FloatMenuOption(toStringFull, delegate
-                    {
-                        __instance.tuningTimeLeft = __instance.tunedTo == null
-                            ? __instance.TuningTimeTicks
-                            : __instance.RetuneTimeTicks;
-                        __instance.tuningTo = localPawn;
-                    }));
-                }
-
-                Find.WindowStack.Add(new FloatMenu(list));
-            });
-            yield return commandAction;
+            yield return CreateCommandAction(__instance);
         }
+    }
+
+    private static bool IsBandNodeTuningCommand(Gizmo gizmo)
+    {
+        return gizmo is Command_Action command && command.icon == BandNodeTuningIcon;
+    }
+
+    private static Command_Action CreateCommandAction(CompBandNode bandNode)
+    {
+        var commandAction = new Command_Action
+        {
+            defaultLabel = bandNode.tunedTo == null
+                ? "BandNodeTuneTo".Translate() + "..."
+                : "BandNodeRetuneTo".Translate() + "...",
+            defaultDesc = bandNode.tunedTo == null
+                ? "BandNodeTuningDesc".Translate("PeriodSeconds".Translate(bandNode.Props.tuneSeconds))
+                : "BandNodeRetuningDesc".Translate($"{bandNode.Props.retuneDays} " + "Days".Translate()),
+            disabled = !HasAvailableMechanitor(bandNode),
+            icon = BandNodeTuningIcon
+        };
+
+        commandAction.onHover = (Action)Delegate.Combine(commandAction.onHover, (Action)delegate
+        {
+            var pawn = bandNode.tuningTo ?? bandNode.tunedTo;
+            if (pawn == null)
+            {
+                return;
+            }
+
+            GenDraw.DrawLineBetween(
+                bandNode.parent.DrawPos,
+                pawn.TryGetGestaltEngineInstead(out var comp) ? comp.parent.DrawPos : pawn.DrawPos);
+        });
+
+        commandAction.action = (Action)Delegate.Combine(commandAction.action,
+            (Action)delegate { Find.WindowStack.Add(new FloatMenu(BuildMechanitorOptions(bandNode))); });
+
+        return commandAction;
+    }
+
+    private static bool HasAvailableMechanitor(CompBandNode bandNode)
+    {
+        if (bandNode.parent.Map.mapPawns.AllPawnsSpawned.Any(pawn => IsSelectableMechanitor(pawn, bandNode)))
+        {
+            return true;
+        }
+
+        return CompGestaltEngine.compGestaltEngines.Any(comp =>
+            comp.parent.Map == bandNode.parent.Map && IsSelectableMechanitor(comp.dummyPawn, bandNode));
+    }
+
+    private static List<FloatMenuOption> BuildMechanitorOptions(CompBandNode bandNode)
+    {
+        var options = new List<FloatMenuOption>();
+
+        foreach (var pawn in bandNode.parent.Map.mapPawns.AllPawnsSpawned.Where(pawn =>
+                     IsSelectableMechanitor(pawn, bandNode)))
+        {
+            AddMechanitorOption(options, bandNode, pawn);
+        }
+
+        foreach (var comp in CompGestaltEngine.compGestaltEngines)
+        {
+            if (comp.parent.Map == bandNode.parent.Map && IsSelectableMechanitor(comp.dummyPawn, bandNode))
+            {
+                AddMechanitorOption(options, bandNode, comp.dummyPawn);
+            }
+        }
+
+        return options;
+    }
+
+    private static bool IsSelectableMechanitor(Pawn pawn, CompBandNode bandNode)
+    {
+        return MechanitorUtility.IsMechanitor(pawn) && pawn != bandNode.tunedTo;
+    }
+
+    private static void AddMechanitorOption(List<FloatMenuOption> options, CompBandNode bandNode, Pawn pawn)
+    {
+        var localPawn = pawn;
+        var label = pawn.Name.ToStringFull;
+        label = bandNode.tunedTo != null
+            ? $"{label} ({bandNode.RetuneTimeTicks.ToStringTicksToPeriod()})"
+            : label + ($" ({bandNode.Props.tuneSeconds} " + "SecondsLower".Translate() + ")");
+
+        options.Add(new FloatMenuOption(label, delegate
+        {
+            bandNode.tuningTimeLeft = bandNode.tunedTo == null
+                ? bandNode.TuningTimeTicks
+                : bandNode.RetuneTimeTicks;
+            bandNode.tuningTo = localPawn;
+        }));
     }
 }

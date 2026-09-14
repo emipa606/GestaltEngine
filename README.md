@@ -82,4 +82,4 @@ Based on the books by Richard K. Morgan, check them out, they are great!
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/GestaltEngine?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3392334612) | tags: matriarch, control
+[![Image](https://img.shields.io/github/v/release/emipa606/GestaltEngine?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3392334612) | matriarch, control

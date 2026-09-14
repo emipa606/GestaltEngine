@@ -1,47 +1,39 @@
 # GitHub Copilot Instructions for Gestalt Engine (Continued)
 
 ## Mod Overview and Purpose
-
-**Gestalt Engine (Continued)** is a standalone version of the "Gestalt Engine" originally found in "Reinforced Mechanoids 2". The mod is designed for enhanced control over mechanoids without requiring a mechanitor. It adds a new mechanoid type, the Matriarch, capable of gestating new mechanoids. This mod aims to enrich the RimWorld experience by integrating seamlessly with the game's art style and mechanics, while offering customization options for balancing.
+Gestalt Engine (Continued) is an updated version of Helixien's mod, designed to provide a standalone experience of the mechanics initially found in "Reinforced Mechanoids 2". This mod empowers players to control mechanoids without requiring a mechanitor and introduces a new mechanoid, the Matriarch, capable of gestating new mechanoids. The mod aims to integrate seamlessly into RimWorld, maintaining the game's art style and mechanics while offering extensive mod options for balance customization.
 
 ## Key Features and Systems
+- **Standalone Mechanoid Control**: Operate mechanoids independently of a mechanitor, enhancing gameplay flexibility.
+- **New Mechanoid - Matriarch**: Adds a unique mechanoid capable of gestating new mechanoids.
+- **Customization**: Extensive options to adjust mod features based on the player's preferences.
+- **Compatibility**: Supports RimWorld version 1.4, with a likelihood of compatibility with Combat Extended.
 
-- **Standalone Mechanitor-Free Control**: Allows players to manage mechanoids independently of a mechanitor.
-- **New Mechanoid - Matriarch**: Introduces the Matriarch mechanoid that can reproduce other mechanoids.
-- **Comprehensive Mod Options**: Extensive settings for users to tweak game balance to their preference.
-- **Seamless Integration**: Ensures that the mod fits into RimWorld's existing aesthetic and mechanics.
-  
 ## Coding Patterns and Conventions
-
-- **Organized Static Classes**: Static classes are used widely, providing clear separation of utility functions and modular components.
-- **Clear Method Names**: Methods are named for their purpose and functionality, aiding readability and maintenance.
-- **Robust Use of Targeting Parameters**: Private methods are utilized for complex targeting logic, enhancing code encapsulation and reusability.
+When contributing to the project, adhere to the following coding conventions to ensure consistency and maintainability:
+- **Naming Conventions**: Use `PascalCase` for class names and methods, and `camelCase` for local variables and method parameters.
+- **File Organization**: Structure files logically in folders, e.g., `Source` for C#, `Defs` for XML definitions.
+- **Comments and Documentation**: Use XML documentation comments for public methods and classes. For internal logic explanations, use single-line or block comments as appropriate.
 
 ## XML Integration
-
-The mod primarily interacts with XML through RimWorld's Def system which may not be outlined fully in the source code description. Ensure XML definitions are placed correctly within the mod's `Defs` directory to provide necessary configurations for new mechanoids and properties.
+- **Defining Mod Options**: Use `ModOptionCategoryDef` in XML files (`ModOptionCategories.xml`) to define configurable settings that allow users to customize their experience.
+- **Recipes and Things**: Utilize `RecipeDef` and `ThingDef` to define crafting recipes and mechanoid specifics in XML (`Recipes_MechGestator_Medium.xml` for recipes).
+- **Research Projects**: Implement `ResearchProjectDef` in XML (`ResearchProjects_4_MultiAnalyzer.xml`) for new technologies related to Gestalt Engine.
+- **Building and Race Definitions**: Specify building and mechanoid characteristics using `statDef` and `ThingDef` (`Buildings_Gestalt.xml` and `Races_Mechanoid.xml`).
 
 ## Harmony Patching
+Harmony patches modify existing game classes to introduce new behaviors:
+- Use the `Prefix` attribute to execute code before the original method, and `Postfix` for code execution after the original method.
+- Example files include `CameraJumper_TryJumpAndSelect.cs`, which uses a `Prefix`, and `CompPowerTrader_CompInspectStringExtra.cs`, which includes both `Prefix` and `Postfix`.
 
-While the mod currently does not necessitate any Harmony patches, future updates or compatibility enhancements might require patching. If needed, Harmony is recommended for non-intrusive modifications of RimWorld's core functionality.
+## Suggestions for Copilot
+To make the best out of GitHub Copilot while developing for Gestalt Engine:
+- **Boilerplate Code**: Use Copilot to generate repetitive code structures, such as `HarmonyPatch` templates or `Def` XML boilerplates.
+- **Refactoring and Suggestions**: Utilize Copilot suggestions for efficient refactoring opportunities and alternative coding approaches in C# files.
+- **XML Autocompletion**: Leverage Copilot for XML autocompletion to quickly draft new definitions or modify existing ones.
+- **Documentation Drafts**: Use Copilot to propose drafts for method documentation or comments for clarity on complex logic. 
 
-## Suggestions for GitHub Copilot
-
-- Leverage Copilot to generate boilerplate code for new classes or methods based on existing patterns.
-- Use Copilot to draft XML Defs templates, complementing existing configurations.
-- Employ Copilot's natural language processing to generate complex targeting methods more intuitively.
-- Seek Copilot's assistance for implementing Harmony patches as the mod evolves with changing dependencies.
-
-Remember, while Copilot can expedite the coding process, always review and test generated code for logical accuracy and integration stability within the broader mod framework.
-
-## Additional Resources
-
-For more detailed documentation and community support, please refer to the [Changelog tab] and use the mod's dedicated Discord channel for error reporting and discussion.
-
-Happy modding!
-
-
-This file serves as a comprehensive guide for developers and contributors engaged in modding the "Gestalt Engine (Continued)" for RimWorld. By following these guidelines, developers can maintain consistency, scalability, and compatibility within the mod and the wider RimWorld modding ecosystem.
+Include this file as a reference for contributors to streamline the development process and ensure the mod remains consistent, efficient, and expandable.
 
 ## Project Solution Guidelines
 - Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
@@ -50,3 +42,11 @@ This file serves as a comprehensive guide for developers and contributors engage
 - When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
 - In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
 - For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+
